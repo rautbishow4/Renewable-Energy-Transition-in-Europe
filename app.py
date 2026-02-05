@@ -8,7 +8,7 @@ st.set_page_config(page_title="EU Renewable Energy Dashboard", layout="wide")
 # 2. Load Data
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Users\Bishownath Raut\cleaned_renewable_data.csv')
+    df = pd.read_csv('cleaned_renewable_data.csv')
     return df
 
 df = load_data()
@@ -88,5 +88,6 @@ fig_map = px.choropleth(
     color_continuous_scale='YlGn'
 )
 st.plotly_chart(fig_map, use_container_width=True)
+
 
 st.sidebar.info("Data Source: Eurostat (sdg_07_40)")
